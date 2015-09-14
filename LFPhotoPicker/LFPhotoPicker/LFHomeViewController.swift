@@ -7,28 +7,21 @@
 //
 
 import UIKit
-<<<<<<< Updated upstream
+
 import AssetsLibrary
+
 class LFHomeViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,LFPhotoPickerControllerDelegate {
    var collectView:UICollectionView?
     var imageArray = NSMutableArray()
-=======
 
-class LFHomeViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-   var collectView:UICollectionView?
-    var imageArray = NSArray()
->>>>>>> Stashed changes
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "图片展示";
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "清除", style: UIBarButtonItemStyle.Done, target: self, action: "clearImage")
-<<<<<<< Updated upstream
+
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "选择", style: UIBarButtonItemStyle.Done, target: self, action: "openPhotoLibrary")
-=======
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "选择", style: UIBarButtonItemStyle.Done, target: self, action: "selectImage")
->>>>>>> Stashed changes
         
         self.makeUI()
     }
@@ -68,7 +61,7 @@ class LFHomeViewController: UIViewController,UICollectionViewDataSource,UICollec
         imageview.image = self.imageArray.objectAtIndex(indexPath.item) as? UIImage
         return cell
     }
-<<<<<<< Updated upstream
+
     // 代理的方法
     func selectImage(photos: NSArray) {
         
@@ -86,22 +79,16 @@ class LFHomeViewController: UIViewController,UICollectionViewDataSource,UICollec
     
         let photoPickeVc = LFPhotoPickerController()
         photoPickeVc.delegate = self
-=======
-    func selectImage(){
-    
-        let photoPickeVc = LFPhotoPickerController()
->>>>>>> Stashed changes
         let nav = UINavigationController(rootViewController: photoPickeVc)
         self.presentViewController(nav, animated: true, completion: nil)
     }
     
     func clearImage(){
     
-<<<<<<< Updated upstream
+
         self.imageArray.removeAllObjects()
         self.collectView?.reloadData()
-=======
->>>>>>> Stashed changes
+
         
     }
 
