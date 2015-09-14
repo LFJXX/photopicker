@@ -4,6 +4,7 @@
 //
 //  Created by apple on 15/9/11.
 //  Copyright (c) 2015年 xyb100. All rights reserved.
+
 //  获取系统相册的图片,并实现多张选择  以及代理的用法
 
 import UIKit
@@ -11,12 +12,19 @@ import AssetsLibrary
 
 protocol LFPhotoPickerControllerDelegate:NSObjectProtocol{
 
+
     func selectImage(photos:NSArray)
     
 }
 class LFPhotoPickerController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
     var delegate:LFPhotoPickerControllerDelegate?
+
+    func selectImage()
+}
+class LFPhotoPickerController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+
+
     var collectView:UICollectionView?
     var selePhotos = NSMutableArray()
     var seleImageNameArray = NSMutableArray()
@@ -59,6 +67,13 @@ class LFPhotoPickerController: UIViewController,UICollectionViewDataSource,UICol
             usingBlock: {
                 group, stop in
                 if group != nil {
+<<<<<<< Updated upstream
+=======
+//                    group.enumerateAssetsUsingBlock({
+//                        asset, index, stop in
+//                        // ...
+//                    })
+>>>>>>> Stashed changes
                     self.showPhoto(group)
                 
                 }
@@ -145,12 +160,19 @@ class LFPhotoPickerController: UIViewController,UICollectionViewDataSource,UICol
         }
     }
 
+<<<<<<< Updated upstream
     func confirm(){
         
         if (self.delegate?.respondsToSelector("selectImage:") != nil){
         
             self.delegate?.selectImage(self.selePhotos)
         }
+=======
+    
+    func confirm(){
+        
+        
+>>>>>>> Stashed changes
     
         self.dismissViewControllerAnimated(true, completion: nil)
         

@@ -4,7 +4,11 @@
 //
 //  Created by apple on 15/9/11.
 //  Copyright (c) 2015年 xyb100. All rights reserved.
+<<<<<<< Updated upstream
 //  练习单例的写法
+=======
+//
+>>>>>>> Stashed changes
 
 import UIKit
 import AssetsLibrary
